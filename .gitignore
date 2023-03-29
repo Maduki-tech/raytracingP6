@@ -30,3 +30,12 @@
 *.exe
 *.out
 *.app
+build/
+/CMakeCache.txt
+/.cache/
+/Makefile
+/cmake_install.cmake
+/main
+/neovim.json
+/out.ppm
+/compile_commands.json
