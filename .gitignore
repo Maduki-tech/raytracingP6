@@ -39,3 +39,5 @@ build/
 /neovim.json
 /out.ppm
 /compile_commands.json
+/html/
+/.cmake/*
