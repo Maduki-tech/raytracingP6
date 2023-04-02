@@ -12,7 +12,6 @@ bool Sphere::intersects(const Ray &ray, double &t) const {
     const V3 o = ray.origin_;
     const V3 d = ray.direction_;
     const V3 oc = o - center_;
-    std::cout << "oc: " << oc.x_ << " " << oc.y_ << " " << oc.z_ << std::endl;
     const double b = 2 * dot(oc, d);
     const double c = dot(oc, oc) - radius_ * radius_;
     double disc = b * b - 4 * c;

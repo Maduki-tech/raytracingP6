@@ -34,10 +34,7 @@ void Image::writePPM() {
     outImage << dimX << " " << dimY << std::endl; // Declare w & h
     outImage << 255 << std::endl;                 // Declare max colour ID
     double t;
-    V3 pixelColor(red);
-    std::cout << pixelColor.x_ << std::endl;
-    std::cout << pixelColor.y_ << std::endl;
-    std::cout << pixelColor.y_ << std::endl;
+    V3 pixelColor(black);
     for (int y = 0; y < dimX; ++y) {
         for (int x = 0; x < dimY; ++x) {
             pixelColor = white;
@@ -51,12 +48,10 @@ void Image::writePPM() {
 
                 pixelColor = (red + white * dt) * 0.5;
                 rgb::clamp(pixelColor);
-                std::cout << pixelColor.x_ << std::endl;
-                std::cout << pixelColor.y_ << std::endl;
-                std::cout << pixelColor.z_ << std::endl;
             }
-            outImage << (int)pixelColor.x_ << ' ' << (int)pixelColor.y_ << ' '
-                     << (int)pixelColor.z_ << '\n';
+            outImage << static_cast<char>(255.999 * pixelColor.x_)
+                     << static_cast<char>(255.999 * pixelColor.y_)
+                     << static_cast<char>(255.999 * pixelColor.z_);
         }
     }
 
