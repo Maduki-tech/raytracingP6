@@ -1,5 +1,6 @@
 #ifndef RGB_H
 #define RGB_H
+#include "Vec3.h"
 /**
  * @class rgb
  * @brief A class to store the RGB values of a pixel
@@ -30,7 +31,7 @@ class rgb {
     /**
      * @brief Clamp the values of the pixel to 0-1
      */
-    void clamp();
+    static void clamp(V3 &c);
     float getR() { return r; }
     float getG() { return g; }
     float getB() { return b; }

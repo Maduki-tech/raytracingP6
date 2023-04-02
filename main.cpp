@@ -1,8 +1,9 @@
 #include "./includes/Image.h"
 
+
 int main() {
-    Image image;
-    image.readPPM("./out.ppm");
-    image.writePPM(100, 100);
+    Image image(500,500);
+    /* image.readPPM("./out.ppm"); */
+    image.writePPM();
     return 0;
 }

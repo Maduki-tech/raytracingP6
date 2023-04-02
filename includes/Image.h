@@ -1,5 +1,6 @@
 #ifndef Image_H
 #define Image_H
+#include "Vec3.h"
 #include "rgb.h"
 /**
  * @class Image
@@ -26,10 +27,10 @@ class Image {
         // set Values for dimX and dimY and create a raster
         dimX = x;
         dimY = y;
-        /* raster = new rgb *[dimX]; */
-        /* for (int i = 0; i < dimX; i++) { */
-        /*     raster[i] = new rgb[dimY]; */
-        /* } */
+        raster = new rgb *[dimX];
+        for (int i = 0; i < dimX; i++) {
+            raster[i] = new rgb[dimY];
+        }
     };
     /**
      * @brief Construct a new Image object with background
@@ -46,13 +47,14 @@ class Image {
      * @param filename The name of the file to read
      */
     void readPPM(const char *filename);
+    inline double dot(const V3& a, const V3& b);
     /**
      * @brief create a new image file 
      *
      * @param x width of the image
      * @param y height of the image
      */
-    void writePPM(int x, int y);
+    void writePPM();
     ~Image();
 };
 #endif // Image_H
